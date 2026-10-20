@@ -1,0 +1,31 @@
+{
+  "name": "Contoso analyse - deliverable 2",
+
+  // Officiele Python-image van Microsoft. Het versienummer staat vast,
+  // zodat de container over een half jaar nog hetzelfde is.
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+
+  // Draait eenmalig nadat de container is gebouwd. Hier worden de
+  // pakketten uit requirements.txt geinstalleerd.
+  "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+
+  "customizations": {
+    "vscode": {
+      // Deze extensies worden in de container geinstalleerd, niet op de
+      // host. Op een nieuwe PC heb je ze dus niet apart nodig.
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-renderers"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "notebook.output.textLineLimit": 60
+      }
+    }
+  },
+
+  // Draai als niet-root gebruiker. Bestanden die de notebook wegschrijft
+  // naar output/ krijgen daardoor jouw eigenaarschap en niet dat van root.
+  "remoteUser": "vscode"
+}

@@ -1,0 +1,10 @@
+# Vastgezette versies. Zonder == installeert pip de nieuwste versie, en dan
+# kan de notebook over een half jaar ander gedrag vertonen dan nu.
+# Dit zijn de versies waarop de notebook is getest.
+
+pandas==3.0.5
+numpy==2.5.3
+matplotlib==3.11.2
+
+# Nodig om notebooks te kunnen draaien binnen VS Code.
+ipykernel==6.29.5
